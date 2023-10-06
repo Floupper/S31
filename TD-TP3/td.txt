@@ -1,0 +1,6 @@
+1) Définir la Struct /si on utilise pas un pointer natif *
+2) Charger la fonction cible => "décastage" du void *
+3) Mettre les paramètres effectifs dans une structure du type paramètre
+4) Faire l'appel à pthread_create en castant la structure
+
+PARTIE Procéssus légers et arguments
