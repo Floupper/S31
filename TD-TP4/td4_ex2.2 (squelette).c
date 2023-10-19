@@ -17,13 +17,12 @@ int main(int argc, char *argv[])
     if (fork() == 0)
     {
         c = 'a';
-        write(fd, &c, 1);
-        printf("Caractère écrit par le fils : %s \n", c);
+        write(fd[1], &c, 1);
+        printf("Caractère écrit par le fils : %c \n", c);
     }
     else
     {
-        read(fd, &c, 1);
-        printf("Caractère lu par le père : %s \n", c);
+        read(fd[0], &c, 1);
+        printf("Caractère lu par le père : %c \n", c);
     }
 }
-\

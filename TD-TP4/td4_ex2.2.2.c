@@ -9,24 +9,18 @@
 int main(int argc, char *argv[])
 {
 
-    char c[100];
-    for (int i = 1; i < argc; i++)
-    {
-        c[i] = argv[i];
-    }
-
     int fd[2]; // Pipe entre le père et le fils
 
     // Création du pipe
     pipe(fd);
     if (fork() == 0)
     {
-        write(fd[1], &c, 1);
-        printf("Caractère écrit par le fils : %s \n", c);
+        write(fd[1], &argv[1], 1);
+        printf("Caractère écrit par le fils : %s \n", argv[1]);
     }
     else
     {
-        read(fd[0], &c, 1);
-        printf("Caractère lu par le père : %s \n", c);
+        read(fd[0], &argv[1], 1);
+        printf("Caractère lu par le père : %s \n", argv[1]);
     }
 }
