@@ -63,7 +63,7 @@ void fill_serv(opServ *serv, char *serv_name)
     myCommand[0] = "";
     myCommand[1] = NULL;
 
-    strcpy(path, "/home/xeragon/Bureau/BUT_S3/S31/projet/serverV2/");
+    strcpy(path, "/home/mathieu/Bureau/S31/Projet-Bimestriel/serverV2_Wlad-Fini/");
     strcat(path, serv_name);
 
     if ((f = fork()) == 0)
